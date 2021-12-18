@@ -1,4 +1,4 @@
-import { Icon, Logo } from 'src/components'
+import { Icon, Layout, Logo } from 'src/components'
 
 import Head from 'next/head'
 import Link from 'next/link'
@@ -16,33 +16,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon-32x32.png" />
       </Head>
 
-      <header>
-        <Logo />
-        <button>
-          Navigation Menu
-          <Icon icon="hamburger" />
-        </button>
-        <nav>
-          <ul>
-            <li>
-              <Link href="/">
-                <a>Home</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/portfolio">
-                <a>Portfolio</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact">
-                <a>Contact Me</a>
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
-      <main>
+      <Layout>
         <h1>Hey, I’m Alex Spencer and I love building beautiful websites</h1>
         <Link href="#about-me">
           <a>About Me</a>
@@ -65,49 +39,7 @@ const Home: NextPage = () => {
         <Link href="/contact">
           <a>Contact Me</a>
         </Link>
-      </main>
-      <footer>
-        <Logo />
-        <nav>
-          <ul>
-            <li>
-              <Link href="/">
-                <a>Home</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/portfolio">
-                <a>Portfolio</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact">
-                <a>Contact Me</a>
-              </Link>
-            </li>
-          </ul>
-        </nav>
-        <ul>
-          <li>
-            <a href="http://www.github.com">
-              Github Profile
-              <Icon icon="github" />
-            </a>
-          </li>
-          <li>
-            <a href="http://www.twitter.com">
-              Twitter Profile
-              <Icon icon="twitter" />
-            </a>
-          </li>
-          <li>
-            <a href="http://www.linkedin.com">
-              LinkedIn Profile
-              <Icon icon="linkedIn" />
-            </a>
-          </li>
-        </ul>
-      </footer>
+      </Layout>
     </>
   )
 }

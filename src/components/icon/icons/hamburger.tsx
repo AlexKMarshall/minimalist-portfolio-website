@@ -10,7 +10,7 @@ export function Hamburger(props: Props): JSX.Element {
       height="13"
       {...props}
     >
-      <g fill="currentColor" fill-Rule="evenodd">
+      <g fill="currentColor" fillRule="evenodd">
         <path d="M0 0h24v1H0zM0 6h24v1H0zM0 12h24v1H0z" />
       </g>
     </svg>
