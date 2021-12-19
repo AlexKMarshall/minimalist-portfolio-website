@@ -1,4 +1,6 @@
-import { Icon, Layout, Logo } from 'src/components'
+import * as styles from 'src/styles/page.css'
+
+import { Heading, Layout } from 'src/components'
 
 import Head from 'next/head'
 import Link from 'next/link'
@@ -17,11 +19,15 @@ const Home: NextPage = () => {
       </Head>
 
       <Layout>
-        <h1>Hey, I’m Alex Spencer and I love building beautiful websites</h1>
+        <Heading level={1}>
+          Hey, I’m Alex Spencer and I love building beautiful websites
+        </Heading>
         <Link href="#about-me">
           <a>About Me</a>
         </Link>
-        <h2 id="about-me">About Me</h2>
+        <Heading id="about-me" level={2} size={1}>
+          About Me
+        </Heading>
         <p>
           I’m a junior front-end developer looking for a new role in an exciting
           company. I focus on writing accessible HTML, using modern CSS
@@ -35,7 +41,9 @@ const Home: NextPage = () => {
         <Link href="/portfolio">
           <a>Go to Portfolio</a>
         </Link>
-        <h2>Interested in doing a project together?</h2>
+        <Heading level={2} size={1}>
+          Interested in doing a project together?
+        </Heading>
         <Link href="/contact">
           <a>Contact Me</a>
         </Link>
