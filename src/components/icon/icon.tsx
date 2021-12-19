@@ -1,6 +1,7 @@
-import { Github, Hamburger, LinkedIn, Twitter } from './icons'
+import { DownArrows, Github, Hamburger, LinkedIn, Twitter } from './icons'
 
 const icons = {
+  downArrows: DownArrows,
   github: Github,
   hamburger: Hamburger,
   linkedIn: LinkedIn,

@@ -1,9 +1,8 @@
 import * as styles from 'src/styles/page.css'
 
-import { Heading, Layout } from 'src/components'
+import { Heading, Layout, Link } from 'src/components'
 
 import Head from 'next/head'
-import Link from 'next/link'
 import type { NextPage } from 'next'
 
 const Home: NextPage = () => {
@@ -38,13 +37,13 @@ const Home: NextPage = () => {
           outdoors. I love being out in nature whether that’s going for a walk,
           run or cycling. I’d love you to check out my work.
         </p>
-        <Link href="/portfolio">
+        <Link href="/portfolio" type="secondary">
           <a>Go to Portfolio</a>
         </Link>
         <Heading level={2} size={1}>
           Interested in doing a project together?
         </Heading>
-        <Link href="/contact">
+        <Link href="/contact" type="secondary">
           <a>Contact Me</a>
         </Link>
       </Layout>

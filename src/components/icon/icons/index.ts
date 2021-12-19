@@ -1,3 +1,4 @@
+export * from './down-arrows'
 export * from './github'
 export * from './hamburger'
 export * from './linkedin'
