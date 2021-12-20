@@ -23,3 +23,8 @@ export const enourmousStack = style({
   flexDirection: 'column',
   gap: '6rem',
 })
+
+export const aboutContent = style({
+  paddingBlock: themeTokens.space.xl,
+  borderBlock: '1px solid hsl(0deg 0% 59%)',
+})
