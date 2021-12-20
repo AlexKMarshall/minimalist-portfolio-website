@@ -1,5 +1,25 @@
 import { style } from '@vanilla-extract/css'
+import { themeTokens } from './theme.css'
 
-export const heading = style({
-  fontFamily: `'Ibarra Real Nova', serif`,
+export const heroWrapper = style({
+  position: 'relative',
+  aspectRatio: '14 / 10',
+})
+
+export const largeStack = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: themeTokens.space.l,
+})
+
+export const extraLargeStack = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: themeTokens.space.xl,
+})
+
+export const enourmousStack = style({
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '6rem',
 })
