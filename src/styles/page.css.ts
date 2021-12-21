@@ -1,3 +1,4 @@
+import { resolveScreenMQ } from './sprinkles.css'
 import { style } from '@vanilla-extract/css'
 import { themeTokens } from './theme.css'
 
@@ -69,7 +70,25 @@ export const enourmousStack = style({
   gap: '6rem',
 })
 
-export const aboutContent = style({
+export const article = style({
+  display: 'grid',
+  gridTemplateColumns: '1fr',
+  gap: themeTokens.space.xl,
+
+  '@media': {
+    [resolveScreenMQ.tablet]: {
+      gridTemplateColumns: '1fr 50%',
+      gap: themeTokens.space['3xl'],
+    },
+    [resolveScreenMQ.desktop]: {
+      gridTemplateColumns: '50% 3fr 1fr',
+      gap: themeTokens.space['3xl'],
+    },
+  },
+})
+
+export const aboutContent = style([largeStack, {
   paddingBlock: themeTokens.space.xl,
   borderBlock: '1px solid hsl(0deg 0% 59%)',
-})
+  alignItems: 'flex-start'
+}])

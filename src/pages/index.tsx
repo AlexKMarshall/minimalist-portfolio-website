@@ -40,32 +40,33 @@ const Home: NextPage = () => {
               <Link href="#about-me">About Me</Link>
             </div>
           </div>
-          <article className={styles.extraLargeStack}>
-            <Image src={profileImage} alt="" placeholder="blur" />
+          <article className={styles.article}>
+            <Image
+              src={profileImage}
+              alt=""
+              placeholder="blur"
+              objectFit="cover"
+              objectPosition="75% center"
+            />
             <div className={styles.aboutContent}>
-              <div
-                className={styles.largeStack}
-                style={{ alignItems: 'flex-start' }}
-              >
-                <Heading id="about-me" level={2} size={1}>
-                  About Me
-                </Heading>
+              <Heading id="about-me" level={2} size={1}>
+                About Me
+              </Heading>
 
-                <p>
-                  I’m a junior front-end developer looking for a new role in an
-                  exciting company. I focus on writing accessible HTML, using
-                  modern CSS practices and writing clean JavaScript. When
-                  writing JavaScript code, I mostly use React, but I can adapt
-                  to whatever tools are required. I’m based in London, UK, but
-                  I’m happy working remotely and have experience in remote
-                  teams. When I’m not coding, you’ll find me outdoors. I love
-                  being out in nature whether that’s going for a walk, run or
-                  cycling. I’d love you to check out my work.
-                </p>
-                <Link href="/portfolio" type="secondary">
-                  Go to Portfolio
-                </Link>
-              </div>
+              <p>
+                I’m a junior front-end developer looking for a new role in an
+                exciting company. I focus on writing accessible HTML, using
+                modern CSS practices and writing clean JavaScript. When writing
+                JavaScript code, I mostly use React, but I can adapt to whatever
+                tools are required. I’m based in London, UK, but I’m happy
+                working remotely and have experience in remote teams. When I’m
+                not coding, you’ll find me outdoors. I love being out in nature
+                whether that’s going for a walk, run or cycling. I’d love you to
+                check out my work.
+              </p>
+              <Link href="/portfolio" type="secondary">
+                Go to Portfolio
+              </Link>
             </div>
           </article>
         </div>
