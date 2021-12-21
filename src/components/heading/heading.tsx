@@ -16,11 +16,16 @@ const components: Record<Props['level'], ElementType> = {
   [3]: 'h3',
 }
 
-export function Heading({ level, size = level, children }: Props): JSX.Element {
+export function Heading({
+  level,
+  size = level,
+  children,
+  ...props
+}: Props): JSX.Element {
   const HeadingComponent = components[level]
 
   return (
-    <HeadingComponent className={styles.heading({ size })}>
+    <HeadingComponent className={styles.heading({ size })} {...props}>
       {children}
     </HeadingComponent>
   )
