@@ -1,26 +1,49 @@
 import * as styles from './layout.css'
 
 import { Box, Heading, HiddenVisually, Icon, Link, Logo } from '..'
-
-import { ReactNode } from 'react'
+import { ReactNode, useRef, useState } from 'react'
 
 type Props = {
   children: ReactNode
 }
 export function Layout({ children }: Props): JSX.Element {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const toggleMenu = () =>
+    setIsMenuOpen((currentState) => {
+      const nextState = !currentState
+      // focus inside the nav menu on opening
+      if (nextState && navNodeRef.current) {
+        navNodeRef.current.focus()
+      }
+      return nextState
+    })
+
+  const navNodeRef = useRef<HTMLAnchorElement>(null)
+
   return (
     <>
       <div className={styles.layoutWrapper}>
         <header className={styles.headerWrapper}>
           <Logo />
-          <button className={styles.hamburgerButton}>
+          <button
+            className={styles.hamburgerButton}
+            onClick={toggleMenu}
+            aria-expanded={isMenuOpen}
+            aria-controls="main-navigation"
+          >
             <HiddenVisually>Navigation Menu</HiddenVisually>
-            <Icon icon="hamburger" />
+            {isMenuOpen ? <Icon icon="close" /> : <Icon icon="hamburger" />}
           </button>
-          <nav className={styles.navigation}>
+          <nav
+            className={styles.navigation}
+            id="main-navigation"
+            onFocus={() => setIsMenuOpen(true)}
+            onBlur={() => setIsMenuOpen(false)}
+          >
             <ul className={styles.navigationList}>
               <li>
-                <Link href="/" type="text">
+                <Link href="/" type="text" anchorRef={navNodeRef}>
                   Home
                 </Link>
               </li>

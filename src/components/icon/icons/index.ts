@@ -1,3 +1,4 @@
+export * from './close'
 export * from './down-arrows'
 export * from './github'
 export * from './hamburger'

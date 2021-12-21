@@ -8,6 +8,7 @@ export const screenSizes = {
 }
 
 export const resolveScreenMQ = {
+  onlyMobile: `screen and (max-width: ${screenSizes.tablet - 1}px)`,
   tablet: `screen and (min-width: ${screenSizes.tablet}px)`,
   desktop: `screen and (min-width: ${screenSizes.desktop}px)`,
 }

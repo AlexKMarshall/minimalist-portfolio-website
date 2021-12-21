@@ -24,25 +24,53 @@ export const fullBleed = style({
 })
 
 export const headerWrapper = style({
+  position: 'relative',
+  isolation: 'isolate',
+  zIndex: 2,
   display: 'flex',
   justifyContent: 'space-between',
+  alignItems: 'center',
   paddingTop: `clamp(${themeTokens.space.xl}, 6vw, ${themeTokens.space['3xl']})`,
   paddingBottom: `clamp(${themeTokens.space.l}, 4vw, ${themeTokens.space['2xl']})`,
 })
 
 export const navigation = style({
-  display: 'none',
-
   '@media': {
-    [resolveScreenMQ.tablet]: {
+    [resolveScreenMQ.onlyMobile]: {
+      transform: 'scale(0)',
+      position: 'absolute',
+      bottom: 0,
+      right: 0,
       display: 'flex',
+      flexDirection: 'column',
+      top: '100%',
+
+      selectors: {
+        [`button[aria-expanded="true"] + &`]: {
+          transform: 'scale(1)',
+        },
+      },
     },
   },
 })
 
 export const navigationList = style({
   display: 'flex',
-  gap: themeTokens.space['2xl'],
+
+  '@media': {
+    [resolveScreenMQ.tablet]: {
+      flexDirection: 'row',
+      gap: themeTokens.space['2xl'],
+    },
+    [resolveScreenMQ.onlyMobile]: {
+      flexDirection: 'column',
+      alignItems: 'center',
+      backgroundColor: toneTokens.grayishDarkBlue,
+      paddingBlock: themeTokens.space['2xl'],
+      paddingInline: themeTokens.space['4xl'],
+      color: 'white',
+    },
+  },
 })
 
 export const hamburgerButton = style({
