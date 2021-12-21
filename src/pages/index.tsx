@@ -1,4 +1,4 @@
-import * as styles from 'src/styles/page.css'
+import * as styles from 'src/styles/home-page.css'
 
 import { Heading, Layout, Link } from 'src/components'
 

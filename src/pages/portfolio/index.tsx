@@ -1,4 +1,4 @@
-import * as styles from 'src/styles/page.css'
+import * as styles from 'src/styles/portfolio-page.css'
 
 import { Heading, Layout, Link } from 'src/components'
 
@@ -74,14 +74,16 @@ function ProjectArticle({
 }: ProjectArticleProps): JSX.Element {
   return (
     <article className={styles.article}>
-      <Image
-        src={image}
-        alt=""
-        placeholder="blur"
-        objectFit="cover"
-        objectPosition="75% center"
-      />
-      <div className={styles.aboutContent}>
+      <div className={styles.articleImage}>
+        <Image
+          src={image}
+          alt=""
+          placeholder="blur"
+          // objectFit="cover"
+          // objectPosition="75% center"
+        />
+      </div>
+      <div className={styles.articleContent}>
         <Heading level={2}>{heading}</Heading>
 
         <p>{textContent}</p>
