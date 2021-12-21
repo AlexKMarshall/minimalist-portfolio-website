@@ -67,27 +67,55 @@ export const contactSection = style({
 
 export const footerLinksSection = style([
   fullBleed,
+  layoutWrapper,
   {
     background: toneTokens.grayishDarkBlue,
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    gap: themeTokens.space['2xl'],
-    paddingBlock: '3.5rem',
+    paddingBlock: themeTokens.space['3xl'],
     color: 'white',
+
+    '@media': {
+      [resolveScreenMQ.tablet]: {
+        flexDirection: 'row',
+        paddingBlock: themeTokens.space.l,
+      },
+    },
   },
 ])
+
+export const footerLinksSectionInner = style({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  gap: themeTokens.space['2xl'],
+  '@media': {
+    [resolveScreenMQ.tablet]: {
+      flexDirection: 'row',
+    },
+  },
+})
 
 export const footerLinksList = style({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
+  '@media': {
+    [resolveScreenMQ.tablet]: {
+      flexDirection: 'row',
+      gap: themeTokens.space['2xl'],
+    },
+  },
 })
 
 export const socialLinksList = style({
   display: 'flex',
   alignItems: 'center',
   gap: '0.25rem',
+  '@media': {
+    [resolveScreenMQ.tablet]: {
+      marginLeft: 'auto',
+      gap: 0,
+    },
+  },
 })
 
 export const socialLink = style({

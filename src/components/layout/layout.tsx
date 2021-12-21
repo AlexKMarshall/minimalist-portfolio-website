@@ -49,46 +49,48 @@ export function Layout({ children }: Props): JSX.Element {
           </Link>
         </div>
         <div className={styles.footerLinksSection}>
-          <Logo />
-          <nav>
-            <ul className={styles.footerLinksList}>
+          <div className={styles.footerLinksSectionInner}>
+            <Logo />
+            <nav>
+              <ul className={styles.footerLinksList}>
+                <li>
+                  <Link href="/" type="text">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/portfolio" type="text">
+                    Portfolio
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" type="text">
+                    Contact Me
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+            <ul className={styles.socialLinksList}>
               <li>
-                <Link href="/" type="text">
-                  Home
-                </Link>
+                <a href="http://www.github.com" className={styles.socialLink}>
+                  <HiddenVisually>Github Profile</HiddenVisually>
+                  <Icon icon="github" />
+                </a>
               </li>
               <li>
-                <Link href="/portfolio" type="text">
-                  Portfolio
-                </Link>
+                <a href="http://www.twitter.com" className={styles.socialLink}>
+                  <HiddenVisually>Twitter Profile</HiddenVisually>
+                  <Icon icon="twitter" />
+                </a>
               </li>
               <li>
-                <Link href="/contact" type="text">
-                  Contact Me
-                </Link>
+                <a href="http://www.linkedin.com" className={styles.socialLink}>
+                  <HiddenVisually>LinkedIn Profile</HiddenVisually>
+                  <Icon icon="linkedIn" />
+                </a>
               </li>
             </ul>
-          </nav>
-          <ul className={styles.socialLinksList}>
-            <li>
-              <a href="http://www.github.com" className={styles.socialLink}>
-                <HiddenVisually>Github Profile</HiddenVisually>
-                <Icon icon="github" />
-              </a>
-            </li>
-            <li>
-              <a href="http://www.twitter.com" className={styles.socialLink}>
-                <HiddenVisually>Twitter Profile</HiddenVisually>
-                <Icon icon="twitter" />
-              </a>
-            </li>
-            <li>
-              <a href="http://www.linkedin.com" className={styles.socialLink}>
-                <HiddenVisually>LinkedIn Profile</HiddenVisually>
-                <Icon icon="linkedIn" />
-              </a>
-            </li>
-          </ul>
+          </div>
         </div>
       </footer>
     </>

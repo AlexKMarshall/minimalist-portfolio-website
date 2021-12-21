@@ -1,6 +1,8 @@
 import { createVar, style } from '@vanilla-extract/css'
 import { themeTokens, toneTokens } from 'src/styles/theme.css'
 
+import { resolveScreenMQ } from 'src/styles/sprinkles.css'
+
 const backgroundColor = createVar()
 const textColor = createVar()
 const iconColor = createVar()
@@ -91,6 +93,12 @@ export const textLink = style([
         vars: {
           [textColor]: toneTokens.cyan,
         },
+      },
+    },
+
+    '@media': {
+      [resolveScreenMQ.desktop]: {
+        paddingBlock: 0,
       },
     },
   },
