@@ -23,8 +23,8 @@ export const primaryLink = style([
   {
     display: 'inline-flex',
     vars: {
-      [iconColor]: 'hsl(167deg 36% 54%)',
-      [backgroundColor]: 'hsl(205deg 41% 21%)',
+      [iconColor]: toneTokens.cyan,
+      [backgroundColor]: toneTokens.darkBlue,
       [textColor]: 'white',
       [borderColor]: 'transparent',
     },
@@ -32,7 +32,7 @@ export const primaryLink = style([
       '&:hover, &:focus-visible': {
         vars: {
           [iconColor]: 'white',
-          [backgroundColor]: 'hsl(167deg 36% 54%)',
+          [backgroundColor]: toneTokens.cyan,
         },
       },
     },
@@ -78,7 +78,6 @@ export const textLink = style([
   linkBase,
   {
     paddingBlock: themeTokens.space.s,
-    paddingInline: themeTokens.space.xl,
     textUnderlineOffset: '0.5em',
     vars: {
       [borderColor]: 'transparent',
@@ -87,6 +86,11 @@ export const textLink = style([
     selectors: {
       '&:hover, &:focus-visible': {
         textDecoration: 'underline',
+      },
+      '&[aria-current="page"]': {
+        vars: {
+          [textColor]: toneTokens.cyan,
+        },
       },
     },
   },

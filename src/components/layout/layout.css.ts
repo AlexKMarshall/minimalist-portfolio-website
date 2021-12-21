@@ -1,6 +1,8 @@
 import { createVar, globalStyle, style } from '@vanilla-extract/css'
 import { themeTokens, toneTokens } from 'src/styles/theme.css'
 
+import { resolveScreenMQ } from 'src/styles/sprinkles.css'
+
 const layoutPadding = createVar()
 
 export const layoutWrapper = style({
@@ -21,14 +23,37 @@ export const fullBleed = style({
   gridColumn: '1 / -1',
 })
 
+export const headerWrapper = style({
+  display: 'flex',
+  justifyContent: 'space-between',
+  paddingTop: `clamp(${themeTokens.space.xl}, 6vw, ${themeTokens.space['3xl']})`,
+  paddingBottom: `clamp(${themeTokens.space.l}, 4vw, ${themeTokens.space['2xl']})`,
+})
+
 export const navigation = style({
-  position: 'absolute',
-  transform: 'scale(0)',
+  display: 'none',
+
+  '@media': {
+    [resolveScreenMQ.tablet]: {
+      display: 'flex',
+    },
+  },
+})
+
+export const navigationList = style({
+  display: 'flex',
+  gap: themeTokens.space['2xl'],
 })
 
 export const hamburgerButton = style({
   border: 'none',
   background: 'none',
+
+  '@media': {
+    [resolveScreenMQ.tablet]: {
+      display: 'none',
+    },
+  },
 })
 
 export const contactSection = style({

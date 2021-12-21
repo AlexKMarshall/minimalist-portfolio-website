@@ -4,6 +4,7 @@ import { AllHTMLAttributes, ReactNode } from 'react'
 
 import { Icon } from '..'
 import NextLink from 'next/link'
+import { useRouter } from 'next/dist/client/router'
 
 type LinkType = 'primary' | 'secondary' | 'text'
 
@@ -50,9 +51,17 @@ function SecondaryLink({ href, children }: LinkInnerProps): JSX.Element {
 }
 
 function TextLink({ href, children }: LinkInnerProps): JSX.Element {
+  const router = useRouter()
+  const isCurrentPath = router.pathname === href
+
   return (
     <NextLink href={href}>
-      <a className={styles.textLink}>{children}</a>
+      <a
+        className={styles.textLink}
+        {...(isCurrentPath && { 'aria-current': 'page' })}
+      >
+        {children}
+      </a>
     </NextLink>
   )
 }

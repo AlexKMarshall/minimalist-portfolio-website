@@ -2,7 +2,6 @@ import * as styles from './layout.css'
 
 import { Box, Heading, HiddenVisually, Icon, Link, Logo } from '..'
 
-import NextLink from 'next/link'
 import { ReactNode } from 'react'
 
 type Props = {
@@ -12,37 +11,32 @@ export function Layout({ children }: Props): JSX.Element {
   return (
     <>
       <div className={styles.layoutWrapper}>
-        <Box
-          component="header"
-          paddingY="xl"
-          display="flex"
-          justifyContent="space-between"
-        >
+        <header className={styles.headerWrapper}>
           <Logo />
           <button className={styles.hamburgerButton}>
             <HiddenVisually>Navigation Menu</HiddenVisually>
             <Icon icon="hamburger" />
           </button>
           <nav className={styles.navigation}>
-            <ul>
+            <ul className={styles.navigationList}>
               <li>
-                <NextLink href="/">
-                  <a>Home</a>
-                </NextLink>
+                <Link href="/" type="text">
+                  Home
+                </Link>
               </li>
               <li>
-                <NextLink href="/portfolio">
-                  <a>Portfolio</a>
-                </NextLink>
+                <Link href="/portfolio" type="text">
+                  Portfolio
+                </Link>
               </li>
               <li>
-                <NextLink href="/contact">
-                  <a>Contact Me</a>
-                </NextLink>
+                <Link href="/contact" type="text">
+                  Contact Me
+                </Link>
               </li>
             </ul>
           </nav>
-        </Box>
+        </header>
         <main>{children}</main>
       </div>
       <footer className={styles.layoutWrapper}>
@@ -51,7 +45,7 @@ export function Layout({ children }: Props): JSX.Element {
             Interested in doing a project together?
           </Heading>
           <Link href="/contact" type="secondary">
-            <a>Contact Me</a>
+            Contact Me
           </Link>
         </div>
         <div className={styles.footerLinksSection}>
@@ -60,17 +54,17 @@ export function Layout({ children }: Props): JSX.Element {
             <ul className={styles.footerLinksList}>
               <li>
                 <Link href="/" type="text">
-                  <a>Home</a>
+                  Home
                 </Link>
               </li>
               <li>
                 <Link href="/portfolio" type="text">
-                  <a>Portfolio</a>
+                  Portfolio
                 </Link>
               </li>
               <li>
                 <Link href="/contact" type="text">
-                  <a>Contact Me</a>
+                  Contact Me
                 </Link>
               </li>
             </ul>

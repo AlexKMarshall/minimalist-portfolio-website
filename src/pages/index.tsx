@@ -37,9 +37,7 @@ const Home: NextPage = () => {
               <Heading level={1}>
                 Hey, I’m Alex Spencer and I love building beautiful websites
               </Heading>
-              <Link href="#about-me">
-                <a>About Me</a>
-              </Link>
+              <Link href="#about-me">About Me</Link>
             </div>
           </div>
           <article className={styles.extraLargeStack}>
@@ -65,7 +63,7 @@ const Home: NextPage = () => {
                   cycling. I’d love you to check out my work.
                 </p>
                 <Link href="/portfolio" type="secondary">
-                  <a>Go to Portfolio</a>
+                  Go to Portfolio
                 </Link>
               </div>
             </div>

@@ -2,6 +2,16 @@ import { createSprinkles, defineProperties } from '@vanilla-extract/sprinkles'
 
 import { themeTokens } from './theme.css'
 
+export const screenSizes = {
+  tablet: 768,
+  desktop: 1024,
+}
+
+export const resolveScreenMQ = {
+  tablet: `screen and (min-width: ${screenSizes.tablet}px)`,
+  desktop: `screen and (min-width: ${screenSizes.desktop}px)`,
+}
+
 const properties = defineProperties({
   properties: {
     paddingTop: themeTokens.space,
