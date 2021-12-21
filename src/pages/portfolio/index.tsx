@@ -51,8 +51,12 @@ const Home: NextPage = () => {
 
       <Layout>
         <div className={styles.enourmousStack}>
-          {projects.map((project) => (
-            <ProjectArticle key={project.heading} {...project} />
+          {projects.map((project, index) => (
+            <ProjectArticle
+              key={project.heading}
+              {...project}
+              imagePriority={index === 0}
+            />
           ))}
         </div>
       </Layout>
@@ -65,23 +69,19 @@ type ProjectArticleProps = {
   heading: string
   textContent: string
   href: string
+  imagePriority?: boolean
 }
 function ProjectArticle({
   image,
   heading,
   textContent,
   href,
+  imagePriority,
 }: ProjectArticleProps): JSX.Element {
   return (
     <article className={styles.article}>
       <div className={styles.articleImage}>
-        <Image
-          src={image}
-          alt=""
-          placeholder="blur"
-          // objectFit="cover"
-          // objectPosition="75% center"
-        />
+        <Image src={image} alt="" placeholder="blur" priority={imagePriority} />
       </div>
       <div className={styles.articleContent}>
         <Heading level={2}>{heading}</Heading>
