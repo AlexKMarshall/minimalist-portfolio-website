@@ -71,24 +71,52 @@ export const enourmousStack = style({
 })
 
 export const article = style({
+  // display: 'grid',
+  // gridTemplateColumns: '1fr',
+  // gap: themeTokens.space.xl,
+
+  // '@media': {
+  //   [resolveScreenMQ.tablet]: {
+  //     gridTemplateColumns: '1fr 50%',
+  //     gap: themeTokens.space['3xl'],
+  //   },
+  //   [resolveScreenMQ.desktop]: {
+  //     gridTemplateColumns: '50% 3fr 1fr',
+  //     gap: themeTokens.space['3xl'],
+  //   },
+  // },
+
   display: 'grid',
   gridTemplateColumns: '1fr',
+  gridTemplateAreas: `'image'
+                      'text'`,
   gap: themeTokens.space.xl,
 
   '@media': {
     [resolveScreenMQ.tablet]: {
       gridTemplateColumns: '1fr 50%',
-      gap: themeTokens.space['3xl'],
+      gridTemplateAreas: `'image text'`,
+      justifyItems: 'end',
     },
     [resolveScreenMQ.desktop]: {
-      gridTemplateColumns: '50% 3fr 1fr',
-      gap: themeTokens.space['3xl'],
+      gridTemplateColumns: '1fr 1fr',
+
+      justifyItems: 'center',
     },
   },
 })
 
-export const aboutContent = style([largeStack, {
-  paddingBlock: themeTokens.space.xl,
-  borderBlock: '1px solid hsl(0deg 0% 59%)',
-  alignItems: 'flex-start'
-}])
+export const aboutContent = style([
+  largeStack,
+  {
+    paddingBlock: themeTokens.space.xl,
+    borderBlock: '1px solid hsl(0deg 0% 59%)',
+    alignItems: 'flex-start',
+
+    '@media': {
+      [resolveScreenMQ.desktop]: {
+        maxWidth: '70%',
+      },
+    },
+  },
+])
