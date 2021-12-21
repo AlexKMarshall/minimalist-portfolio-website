@@ -3,7 +3,7 @@ import { themeTokens } from './theme.css'
 
 export const heroWrapper = style({
   position: 'relative',
-  aspectRatio: '14 / 10',
+  minHeight: '33vh',
 })
 
 export const largeStack = style({
