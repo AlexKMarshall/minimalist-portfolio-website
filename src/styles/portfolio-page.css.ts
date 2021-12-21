@@ -1,6 +1,7 @@
+import { themeTokens, toneTokens } from './theme.css'
+
 import { resolveScreenMQ } from './sprinkles.css'
 import { style } from '@vanilla-extract/css'
-import { themeTokens } from './theme.css'
 
 export const largeStack = style({
   display: 'flex',
@@ -58,7 +59,7 @@ export const articleContent = style([
   {
     gridArea: 'text',
     paddingBlock: themeTokens.space.xl,
-    borderBlock: '1px solid hsl(0deg 0% 59%)',
+    borderBlock: `1px solid ${toneTokens.borderGrey}`,
     justifyContent: 'center',
     alignItems: 'flex-start',
 

@@ -91,6 +91,28 @@ export const contactSection = style({
   alignItems: 'center',
   gap: themeTokens.space.xl,
   textAlign: 'center',
+
+  '@media': {
+    [resolveScreenMQ.tablet]: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      textAlign: 'start',
+
+      ':before': {
+        content: '',
+        display: 'block',
+        height: 1,
+        backgroundColor: toneTokens.borderGrey,
+        flexGrow: 1,
+        flexShrink: 1,
+      },
+    },
+  },
+})
+
+globalStyle(`${contactSection} > *:first-child`, {
+  flexBasis: '350px',
+  order: -1,
 })
 
 export const footerLinksSection = style([

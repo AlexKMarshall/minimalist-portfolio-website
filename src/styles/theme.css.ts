@@ -4,6 +4,7 @@ export const toneTokens = createGlobalTheme(':root', {
   grayishDarkBlue: 'hsl(245deg 10% 22%)',
   darkBlue: 'hsl(205deg 41% 21%)',
   cyan: 'hsl(167deg 36% 54%)',
+  borderGrey: 'hsl(0deg 0% 59%)',
 })
 
 export const themeTokens = createGlobalTheme(':root', {
