@@ -49,7 +49,7 @@ const Home: NextPage = () => {
               objectPosition="75% center"
             />
             <div className={styles.aboutContent}>
-              <Heading id="about-me" level={2} size={1}>
+              <Heading id="about-me" level={2}>
                 About Me
               </Heading>
 

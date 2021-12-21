@@ -82,9 +82,7 @@ function ProjectArticle({
         objectPosition="75% center"
       />
       <div className={styles.aboutContent}>
-        <Heading level={2} size={1}>
-          {heading}
-        </Heading>
+        <Heading level={2}>{heading}</Heading>
 
         <p>{textContent}</p>
         <Link href={href} type="secondary">
