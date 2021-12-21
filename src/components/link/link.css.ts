@@ -1,6 +1,5 @@
 import { createVar, style } from '@vanilla-extract/css'
-
-import { themeTokens } from 'src/styles/theme.css'
+import { themeTokens, toneTokens } from 'src/styles/theme.css'
 
 const backgroundColor = createVar()
 const textColor = createVar()
@@ -40,28 +39,6 @@ export const primaryLink = style([
   },
 ])
 
-export const secondaryLink = style([
-  linkBase,
-  {
-    paddingBlock: themeTokens.space.s,
-    paddingInline: themeTokens.space.xl,
-    vars: {
-      [textColor]: 'hsl(245deg 10% 22%)',
-      [borderColor]: textColor,
-      [backgroundColor]: 'transparent',
-    },
-    selectors: {
-      '&:hover, &:focus-visible': {
-        vars: {
-          [backgroundColor]: 'hsl(245deg 10% 22%)',
-          [textColor]: 'hsl(0 0% 98%)',
-          [borderColor]: 'transparent',
-        },
-      },
-    },
-  },
-])
-
 export const linkIcon = style({
   display: 'grid',
   paddingInline: themeTokens.space.s,
@@ -74,3 +51,43 @@ export const linkContent = style({
   paddingBlock: themeTokens.space.s,
   paddingInline: themeTokens.space.xl,
 })
+
+export const secondaryLink = style([
+  linkBase,
+  {
+    paddingBlock: themeTokens.space.s,
+    paddingInline: themeTokens.space.xl,
+    vars: {
+      [textColor]: toneTokens.grayishDarkBlue,
+      [borderColor]: textColor,
+      [backgroundColor]: 'transparent',
+    },
+    selectors: {
+      '&:hover, &:focus-visible': {
+        vars: {
+          [backgroundColor]: toneTokens.grayishDarkBlue,
+          [textColor]: 'hsl(0 0% 98%)',
+          [borderColor]: 'transparent',
+        },
+      },
+    },
+  },
+])
+
+export const textLink = style([
+  linkBase,
+  {
+    paddingBlock: themeTokens.space.s,
+    paddingInline: themeTokens.space.xl,
+    textUnderlineOffset: '0.5em',
+    vars: {
+      [borderColor]: 'transparent',
+      [backgroundColor]: 'transparent',
+    },
+    selectors: {
+      '&:hover, &:focus-visible': {
+        textDecoration: 'underline',
+      },
+    },
+  },
+])

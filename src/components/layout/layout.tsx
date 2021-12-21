@@ -1,8 +1,8 @@
 import * as styles from './layout.css'
 
-import { Box, HiddenVisually, Icon, Logo } from '..'
+import { Box, Heading, HiddenVisually, Icon, Link, Logo } from '..'
 
-import Link from 'next/link'
+import NextLink from 'next/link'
 import { ReactNode } from 'react'
 
 type Props = {
@@ -26,19 +26,19 @@ export function Layout({ children }: Props): JSX.Element {
           <nav className={styles.navigation}>
             <ul>
               <li>
-                <Link href="/">
+                <NextLink href="/">
                   <a>Home</a>
-                </Link>
+                </NextLink>
               </li>
               <li>
-                <Link href="/portfolio">
+                <NextLink href="/portfolio">
                   <a>Portfolio</a>
-                </Link>
+                </NextLink>
               </li>
               <li>
-                <Link href="/contact">
+                <NextLink href="/contact">
                   <a>Contact Me</a>
-                </Link>
+                </NextLink>
               </li>
             </ul>
           </nav>
@@ -46,46 +46,56 @@ export function Layout({ children }: Props): JSX.Element {
         <main>{children}</main>
       </Box>
       <footer>
-        <Logo />
-        <nav>
-          <ul>
+        <div className={styles.contactSection}>
+          <Heading level={2} size={1}>
+            Interested in doing a project together?
+          </Heading>
+          <Link href="/contact" type="secondary">
+            <a>Contact Me</a>
+          </Link>
+        </div>
+        <div className={styles.footerLinksSection}>
+          <Logo />
+          <nav>
+            <ul className={styles.footerLinksList}>
+              <li>
+                <Link href="/" type="text">
+                  <a>Home</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/portfolio" type="text">
+                  <a>Portfolio</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" type="text">
+                  <a>Contact Me</a>
+                </Link>
+              </li>
+            </ul>
+          </nav>
+          <ul className={styles.socialLinksList}>
             <li>
-              <Link href="/">
-                <a>Home</a>
-              </Link>
+              <a href="http://www.github.com" className={styles.socialLink}>
+                <HiddenVisually>Github Profile</HiddenVisually>
+                <Icon icon="github" />
+              </a>
             </li>
             <li>
-              <Link href="/portfolio">
-                <a>Portfolio</a>
-              </Link>
+              <a href="http://www.twitter.com" className={styles.socialLink}>
+                <HiddenVisually>Twitter Profile</HiddenVisually>
+                <Icon icon="twitter" />
+              </a>
             </li>
             <li>
-              <Link href="/contact">
-                <a>Contact Me</a>
-              </Link>
+              <a href="http://www.linkedin.com" className={styles.socialLink}>
+                <HiddenVisually>LinkedIn Profile</HiddenVisually>
+                <Icon icon="linkedIn" />
+              </a>
             </li>
           </ul>
-        </nav>
-        <ul>
-          <li>
-            <a href="http://www.github.com">
-              Github Profile
-              <Icon icon="github" />
-            </a>
-          </li>
-          <li>
-            <a href="http://www.twitter.com">
-              Twitter Profile
-              <Icon icon="twitter" />
-            </a>
-          </li>
-          <li>
-            <a href="http://www.linkedin.com">
-              LinkedIn Profile
-              <Icon icon="linkedIn" />
-            </a>
-          </li>
-        </ul>
+        </div>
       </footer>
     </>
   )

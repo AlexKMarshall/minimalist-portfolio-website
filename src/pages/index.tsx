@@ -42,7 +42,7 @@ const Home: NextPage = () => {
               <a>About Me</a>
             </Link>
           </div>
-          <div className={styles.extraLargeStack}>
+          <article className={styles.extraLargeStack}>
             <Image src={profileImage} alt="" placeholder="blur" />
             <div className={styles.aboutContent}>
               <div
@@ -69,14 +69,8 @@ const Home: NextPage = () => {
                 </Link>
               </div>
             </div>
-          </div>
+          </article>
         </div>
-        <Heading level={2} size={1}>
-          Interested in doing a project together?
-        </Heading>
-        <Link href="/contact" type="secondary">
-          <a>Contact Me</a>
-        </Link>
       </Layout>
     </>
   )
