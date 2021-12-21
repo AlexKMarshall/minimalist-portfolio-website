@@ -22,25 +22,25 @@ const Home: NextPage = () => {
 
       <Layout>
         <div className={styles.enourmousStack}>
-          <div className={styles.extraLargeStack}>
-            <div className={styles.largeStack}>
-              <div className={styles.heroWrapper}>
-                <Image
-                  src={heroImage}
-                  alt=""
-                  priority
-                  placeholder="blur"
-                  layout="fill"
-                  objectFit="cover"
-                />
-              </div>
+          <div className={styles.heroSection}>
+            <div className={styles.heroImageWrapper}>
+              <Image
+                src={heroImage}
+                alt=""
+                priority
+                placeholder="blur"
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
+            <div className={styles.heroContent}>
               <Heading level={1}>
                 Hey, I’m Alex Spencer and I love building beautiful websites
               </Heading>
+              <Link href="#about-me">
+                <a>About Me</a>
+              </Link>
             </div>
-            <Link href="#about-me">
-              <a>About Me</a>
-            </Link>
           </div>
           <article className={styles.extraLargeStack}>
             <Image src={profileImage} alt="" placeholder="blur" />

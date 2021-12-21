@@ -1,9 +1,54 @@
 import { style } from '@vanilla-extract/css'
 import { themeTokens } from './theme.css'
 
-export const heroWrapper = style({
+export const heroSection = style({
+  display: 'grid',
+  gridTemplateColumns: '1fr',
+  gridTemplateRows: '33vh',
+  gridTemplateAreas: ` 'heroImage'
+                        'heroContent'
+                        `,
+  gap: themeTokens.space.xl,
+
+  '@media': {
+    'screen and (min-width: 768px)': {
+      gridTemplateAreas: `'layer'`,
+      gridTemplateRows: '50vh',
+    },
+  },
+})
+
+export const heroImageWrapper = style({
   position: 'relative',
-  minHeight: '33vh',
+  height: '100%',
+  gridArea: 'heroImage',
+
+  '@media': {
+    'screen and (min-width: 768px)': {
+      gridArea: 'layer',
+    },
+  },
+})
+
+export const heroContent = style({
+  isolation: 'isolate',
+  gridArea: 'heroContent',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'flex-start',
+  gap: themeTokens.space.l,
+
+  '@media': {
+    'screen and (min-width: 768px)': {
+      gridArea: 'layer',
+      backgroundColor: 'white',
+      alignSelf: 'end',
+      maxWidth: 'min(75%, 60ch)',
+      paddingTop: themeTokens.space['3xl'],
+      paddingRight: themeTokens.space['2xl'],
+      gap: themeTokens.space['2xl'],
+    },
+  },
 })
 
 export const largeStack = style({
