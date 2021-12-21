@@ -1,11 +1,24 @@
+import { createVar, globalStyle, style } from '@vanilla-extract/css'
 import { themeTokens, toneTokens } from 'src/styles/theme.css'
 
-import { style } from '@vanilla-extract/css'
+const layoutPadding = createVar()
 
 export const layoutWrapper = style({
-  paddingInline: themeTokens.space.xl,
-  maxWidth: '1100px',
-  marginInline: 'auto',
+  display: 'grid',
+  gridTemplateColumns: `1fr min(1100px, calc(100% - calc(2 * ${layoutPadding}))) 1fr`,
+  columnGap: layoutPadding,
+
+  vars: {
+    [layoutPadding]: `clamp(${themeTokens.space.m}, 5vw, ${themeTokens.space['2xl']})`,
+  },
+})
+
+globalStyle(`${layoutWrapper} > *`, {
+  gridColumn: '2 / 3',
+})
+
+export const fullBleed = style({
+  gridColumn: '1 / -1',
 })
 
 export const navigation = style({
@@ -19,9 +32,6 @@ export const hamburgerButton = style({
 })
 
 export const contactSection = style({
-  paddingInline: themeTokens.space.xl,
-  maxWidth: '1100px',
-  marginInline: 'auto',
   paddingBlock: '6rem',
   display: 'flex',
   flexDirection: 'column',
@@ -30,15 +40,18 @@ export const contactSection = style({
   textAlign: 'center',
 })
 
-export const footerLinksSection = style({
-  background: toneTokens.grayishDarkBlue,
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  gap: themeTokens.space['2xl'],
-  paddingBlock: '3.5rem',
-  color: 'white',
-})
+export const footerLinksSection = style([
+  fullBleed,
+  {
+    background: toneTokens.grayishDarkBlue,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: themeTokens.space['2xl'],
+    paddingBlock: '3.5rem',
+    color: 'white',
+  },
+])
 
 export const footerLinksList = style({
   display: 'flex',

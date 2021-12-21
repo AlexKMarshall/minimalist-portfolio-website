@@ -45,7 +45,7 @@ export function Layout({ children }: Props): JSX.Element {
         </Box>
         <main>{children}</main>
       </div>
-      <footer>
+      <footer className={styles.layoutWrapper}>
         <div className={styles.contactSection}>
           <Heading level={2} size={1}>
             Interested in doing a project together?
