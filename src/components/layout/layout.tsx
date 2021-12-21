@@ -1,7 +1,9 @@
 import * as styles from './layout.css'
 
-import { Box, Heading, HiddenVisually, Icon, Link, Logo } from '..'
+import { Heading, HiddenVisually, Icon, Link, Logo } from '..'
 import { ReactNode, useRef, useState } from 'react'
+
+import NextLink from 'next/link'
 
 type Props = {
   children: ReactNode
@@ -25,7 +27,12 @@ export function Layout({ children }: Props): JSX.Element {
     <>
       <div className={styles.layoutWrapper}>
         <header className={styles.headerWrapper}>
-          <Logo />
+          <NextLink href="/">
+            <a>
+              <HiddenVisually>Home</HiddenVisually>
+              <Logo />
+            </a>
+          </NextLink>
           <button
             className={styles.hamburgerButton}
             onClick={toggleMenu}
