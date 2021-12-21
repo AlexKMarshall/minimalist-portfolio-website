@@ -11,7 +11,7 @@ type Props = {
 export function Layout({ children }: Props): JSX.Element {
   return (
     <>
-      <Box paddingX="xl">
+      <div className={styles.layoutWrapper}>
         <Box
           component="header"
           paddingY="xl"
@@ -44,7 +44,7 @@ export function Layout({ children }: Props): JSX.Element {
           </nav>
         </Box>
         <main>{children}</main>
-      </Box>
+      </div>
       <footer>
         <div className={styles.contactSection}>
           <Heading level={2} size={1}>

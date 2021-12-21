@@ -1,7 +1,12 @@
 import { themeTokens, toneTokens } from 'src/styles/theme.css'
 
-import { getHeapSpaceStatistics } from 'v8'
 import { style } from '@vanilla-extract/css'
+
+export const layoutWrapper = style({
+  paddingInline: themeTokens.space.xl,
+  maxWidth: '1100px',
+  marginInline: 'auto',
+})
 
 export const navigation = style({
   position: 'absolute',
@@ -15,6 +20,8 @@ export const hamburgerButton = style({
 
 export const contactSection = style({
   paddingInline: themeTokens.space.xl,
+  maxWidth: '1100px',
+  marginInline: 'auto',
   paddingBlock: '6rem',
   display: 'flex',
   flexDirection: 'column',
